@@ -124,3 +124,170 @@ section.approach,section.work,section.experience,section.industry,section.skills
   .foundationGrid p{font-size:10px}
   .foundationGrid strong{font-size:9px}
 }
+
+
+/* Final mobile information-density pass */
+@media (max-width:700px){
+  /* Readability: body copy stays comfortably legible while layouts become shorter. */
+  .sectionHead{margin-bottom:16px}
+  .sectionHead h2{font-size:30px;line-height:1.03;letter-spacing:-.055em}
+  .sectionHead p{font-size:14px;line-height:1.55}
+  .eyebrow{font-size:9px}
+
+  /* Reduce vertical whitespace between major sections. */
+  section.approach,section.work,section.experience,section.industry,section.skills,section.foundation,section.contact{
+    padding-top:34px;
+    padding-bottom:34px;
+  }
+
+  /* Engineering approach: 6 compact steps in a 3 x 2 grid instead of six tall rows. */
+  .approachFlow{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:0;
+    padding:4px;
+  }
+  .approachStep{
+    min-height:58px;
+    padding:10px 9px;
+    gap:6px;
+    border-right:1px solid var(--line)!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+  .approachStep:nth-child(3n){border-right:0!important}
+  .approachStep:nth-child(n+4){border-bottom:0!important}
+  .approachStep>span{font-size:7px}
+  .approachStep b{font-size:10.5px;line-height:1.15}
+  .approachStep>svg{display:none}
+
+  /* Project system flows: no horizontal scrolling. Four stages become a compact 2 x 2 system map. */
+  .architecture{
+    padding:11px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom:18px;
+  }
+  .architectureLabel{font-size:8px;margin-bottom:8px}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px;
+    overflow:visible;
+  }
+  .flowItem{
+    min-width:0;
+    min-height:62px;
+    padding:9px;
+    gap:8px;
+  }
+  .flowItem>span{font-size:7px}
+  .flowItem b{font-size:10px;line-height:1.25}
+  .flowItem i{display:none}
+
+  /* Project copy: larger text, less padding. */
+  .projectCase>h3{font-size:31px;margin-top:16px}
+  .projectCase>h4{font-size:12px}
+  .projectIntro{font-size:14px;line-height:1.6;margin-top:13px;margin-bottom:17px}
+  .caseGrid p{font-size:12px;line-height:1.58}
+  .caseGrid>div,.caseGrid>div:nth-child(even){padding:13px 0}
+  .caseGrid span,.stack>span{font-size:8px}
+  .stack b{font-size:9px;padding:6px 8px}
+  .projectNote{font-size:10.5px;line-height:1.5}
+  .projectCta{padding:14px 15px;margin-bottom:18px}
+  .projectCta span,.projectCta strong{font-size:10.5px}
+
+  /* Experience: compact delivery chain and impact cards. */
+  .experienceMeta{padding-top:0;padding-bottom:16px}
+  .experienceMeta h3{font-size:24px}
+  .deliveryChain{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    white-space:normal;
+    padding:10px 0;
+  }
+  .deliveryChain span{
+    min-height:32px;
+    padding:5px 6px;
+    font-size:8px;
+    line-height:1.2;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .deliveryChain span:nth-child(3n){border-right:0}
+  .deliveryChain span:nth-child(n+4){border-bottom:0}
+  .deliveryChain svg{display:none}
+  .impactGrid article,.impactGrid article:nth-child(even){padding:14px 0}
+  .impactGrid h4{font-size:14px;margin-bottom:5px}
+  .impactGrid p{font-size:11.5px;line-height:1.58}
+  .selectedCase{margin-top:14px;padding:20px}
+  .selectedCase h3{font-size:24px}
+  .selectedCase p{font-size:11px;line-height:1.55}
+
+  /* Industry representation: compact two-column event grid. */
+  .industryStatement{
+    padding:12px 0;
+    margin-bottom:14px;
+  }
+  .industryStatement strong{font-size:13px;line-height:1.35}
+  .industryStatement span{font-size:9px}
+  .eventTimeline{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:0;
+  }
+  .eventTimeline:before{display:none}
+  .eventItem{
+    padding:12px 12px 12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .eventItem:nth-child(even){
+    padding-left:12px;
+    padding-right:0;
+    border-left:1px solid var(--line);
+  }
+  .eventItem:nth-last-child(-n+2){border-bottom:0}
+  .eventYear{font-size:8px}
+  .eventMarker{height:16px}
+  .eventMarker i{top:3px;left:0;width:9px;height:9px}
+  .eventCopy{
+    min-height:0;
+    border:0;
+    padding:6px 0 0;
+  }
+  .eventCopy span{font-size:7px}
+  .eventCopy h3{font-size:13px;line-height:1.2;margin:5px 0 4px}
+  .eventCopy p{font-size:10px;line-height:1.4}
+
+  /* Technical stack: two compact columns instead of eight full-width cards. */
+  .skillsGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .skillsGrid article,
+  .skillsGrid article:nth-child(2n){
+    min-height:0;
+    padding:14px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .skillsGrid article:nth-child(2n){border-right:0}
+  .skillsGrid article:nth-last-child(-n+2){border-bottom:0}
+  .skillsGrid article>span{font-size:7px}
+  .skillsGrid h3{font-size:14px;line-height:1.2;margin:8px 0 6px}
+  .skillsGrid p{font-size:10.5px;line-height:1.52}
+
+  /* Foundation stays readable without oversized blocks. */
+  .foundationGrid article,
+  .foundationGrid article:nth-child(2),
+  .foundationGrid article:last-child{
+    padding-top:17px!important;
+    padding-bottom:17px!important;
+  }
+  .foundationGrid h3{font-size:17px}
+  .foundationGrid p{font-size:11px;line-height:1.55}
+  .foundationGrid strong{font-size:9.5px}
+
+  /* Slightly tighter contact/footer. */
+  .contactPanel{padding:24px 20px;gap:28px}
+  .contactPanel h2{font-size:36px}
+  .contactPanel p{font-size:13px}
+}
